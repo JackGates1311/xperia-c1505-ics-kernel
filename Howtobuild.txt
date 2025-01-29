@@ -1,0 +1,11 @@
+cd "/home/markom/Desktop/C1505/Kernel_source/11.1.A.0.68"
+
+docker build -t ubuntu-12-gcc .
+docker run -it ubuntu-12-gcc (-d instead of -it is also an option)
+
+make clean
+make ARCH=arm CROSS_COMPILE=$CROSS_COMPILE msm7627a-perf_defconfig
+make ARCH=arm CROSS_COMPILE=$CROSS_COMPILE -j <number_of_cpu_cores> #BUILDED SUCCESSFULLY INSIDE DOCKER, at 28.01.2025. 23.15!! - /usr/src/kernel/arch/arm/boot - zImage is there, 
+so you can modify them
+
+cpu_cores = 1 is safest
