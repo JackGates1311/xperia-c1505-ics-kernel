@@ -171,3 +171,31 @@ docker info
 Show the current version of Docker:
 
 docker --version
+
+30. Stop all running containers:
+
+docker stop $(docker ps -aq)
+
+31. Remove all containers:
+
+docker rm $(docker ps -aq)
+
+32. Remove the build cache:
+
+docker builder prune
+
+This command will remove all unused build cache from Docker. If you want to remove all cache without any prompts, use:
+
+docker builder prune -f
+
+33. Remove all unused Docker images:
+
+docker image prune -a
+
+This will remove all images that are not associated with any containers (both unused and dangling images).
+
+34. Remove unused volumes:
+
+docker volume prune
+
+By running these commands, you can ensure that all build-related caches and unused images or volumes are cleared, giving you a fresh environment for the next build.
