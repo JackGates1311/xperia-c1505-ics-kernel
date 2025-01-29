@@ -1,0 +1,173 @@
+1. Build Docker Image
+
+Build a Docker image from the current directory:
+
+docker build -t <image_name>:<tag> .
+
+2. Run Docker Container
+
+Run a Docker container interactively with the image:
+
+docker run -it --rm <image_name>:<tag>
+
+3. Run Docker Container with Volume Mapping
+
+Run a Docker container with the current directory mounted as a volume inside the container:
+
+docker run -it --rm -v $(pwd):/workspace <image_name>:<tag>
+
+4. List Running Containers
+
+List all running Docker containers:
+
+docker ps
+
+5. List All Containers (Including Stopped Ones)
+
+List all containers, including those that are stopped:
+
+docker ps -a
+
+6. Stop a Running Container
+
+Stop a running container:
+
+docker stop <container_name_or_id>
+
+7. Remove a Stopped Container
+
+Remove a stopped container:
+
+docker rm <container_name_or_id>
+
+8. Remove Docker Image
+
+Remove a Docker image:
+
+docker rmi <image_name>:<tag>
+
+9. Remove Dangling Images (Unused Images)
+
+Remove unused Docker images:
+
+docker image prune
+
+10. List Docker Images
+
+List all Docker images on the local system:
+
+docker images
+
+11. Pull Docker Image from Docker Hub
+
+Pull a Docker image from Docker Hub:
+
+docker pull <image_name>:<tag>
+
+12. Push Docker Image to Docker Hub
+
+Push a Docker image to Docker Hub:
+
+docker push <image_name>:<tag>
+
+13. Build Docker Image from Specific Directory
+
+Build a Docker image from a specific directory:
+
+docker build -t <image_name>:<tag> /path/to/directory
+
+14. Run Docker Container in Detached Mode
+
+Run a Docker container in detached mode:
+
+docker run -d --name <container_name> <image_name>:<tag>
+
+15. Attach to a Running Container
+
+Attach to a running Docker container:
+
+docker attach <container_name_or_id>
+
+16. Execute Command Inside Running Container
+
+Execute a command inside a running container (e.g., open a bash shell):
+
+docker exec -it <container_name_or_id> bash
+
+17. Check Docker Disk Usage
+
+Check Docker's disk usage, including images, containers, and volumes:
+
+docker system df
+
+18. Clean Up Unused Docker Resources
+
+Clean up unused Docker resources (images, containers, volumes, etc.):
+
+docker system prune -a
+
+19. View Docker Logs
+
+View the logs of a running or stopped container:
+
+docker logs <container_name_or_id>
+
+20. Export Container to a Tar File
+
+Export a container to a tar file:
+
+docker export <container_name_or_id> -o <container_name>.tar
+
+21. Import Tar File as Docker Image
+
+Import a tar file as a Docker image:
+
+docker import <container_name>.tar <new_image_name>:<tag>
+
+22. Save Docker Image to a Tar File
+
+Save a Docker image to a tar file:
+
+docker save -o <image_name>.tar <image_name>:<tag>
+
+23. Load Docker Image from a Tar File
+
+Load a Docker image from a tar file:
+
+docker load -i <image_name>.tar
+
+24. Create a Docker Network
+
+Create a Docker network:
+
+docker network create <network_name>
+
+25. Inspect a Docker Network
+
+Inspect a Docker network to view details:
+
+docker network inspect <network_name>
+
+26. Create a Docker Volume
+
+Create a Docker volume:
+
+docker volume create <volume_name>
+
+27. Inspect a Docker Volume
+
+Inspect a Docker volume to view details:
+
+docker volume inspect <volume_name>
+
+28. Show Docker System-wide Information
+
+Show system-wide information about Docker:
+
+docker info
+
+29. Show Docker Version
+
+Show the current version of Docker:
+
+docker --version

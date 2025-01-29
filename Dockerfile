@@ -1,7 +1,3 @@
-# COMMANDS:
-# docker build -t ubuntu-12-gcc .
-# docker run -it ubuntu-12-gcc
-
 # Use Ubuntu 12.04 as the base image
 FROM ubuntu:12.04
 
@@ -46,6 +42,15 @@ WORKDIR /usr/src/kernel
 
 # Modify the Makefile to suppress warnings
 RUN echo "export KBUILD_CFLAGS += -Wno-array-bounds -Wno-maybe-uninitialized -Wno-unused-value -Wno-address -Wno-uninitialized" >> /usr/src/kernel/Makefile
+
+# Run kernel build commands (2 CPU cores)
+RUN make clean && \
+    make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE msm7627a-perf_defconfig && \
+    make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE -j2
+
+# Copy the built zImage to the /output directory, which will be mounted to the local machine
+RUN mkdir -p /output && \
+    cp /usr/src/kernel/arch/arm/boot/zImage /output/zImage
 
 # Default command
 CMD ["bash"]
