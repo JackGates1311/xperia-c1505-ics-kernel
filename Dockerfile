@@ -31,6 +31,10 @@ ENV CROSS_COMPILE=/android/arm-eabi-4.6/bin/arm-eabi-
 ENV PATH="/android/arm-eabi-4.6/bin:$PATH"
 ENV ARCH=arm
 
+# Set KBUILD_BUILD_USER and KBUILD_BUILD_HOST to custom values
+ENV KBUILD_BUILD_USER=jackgates1311
+ENV KBUILD_BUILD_HOST=docker-ubuntu-12-04
+
 # Verify the versions of GCC and Python
 RUN arm-eabi-gcc --version && python2 --version
 
