@@ -42,9 +42,9 @@ make -j$(nproc)
 ```
 
 #### **B) Docker-Based Compilation**\
-You need only to run ./BUILDIMAGE.sh from root of the project
+You need only to run ./BUILDZIMAGE.sh from root of the project
 ```bash
-./BUILDIMAGE.sh
+./BUILDZIMAGE.sh
 ```
 > **Note:** Docker automatically configures the toolchain and environment. zImage will be saved in output directory using this method.
 
