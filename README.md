@@ -41,12 +41,12 @@ make clean && make menuconfig
 make -j$(nproc)
 ```
 
-#### **B) Docker-Based Compilation**  
+#### **B) Docker-Based Compilation**\
+You need only to run ./BUILDIMAGE.sh from root of the project
 ```bash
-docker build -t xperia-kernel .  
-docker run --rm -v $(pwd):/kernel xperia-kernel  
+./BUILDIMAGE.sh
 ```
-> **Note:** Docker automatically configures the toolchain and environment.
+> **Note:** Docker automatically configures the toolchain and environment. zImage will be saved in output directory using that method
 
 ---
 
