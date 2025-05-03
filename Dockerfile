@@ -41,6 +41,12 @@ RUN arm-eabi-gcc --version && python2 --version
 # Copy the kernel directory from the build context to /usr/src/kernel in the container
 COPY ./kernel /usr/src/kernel
 
+# Copy the makeelf directory from the build context to /usr/src/kernel in the container
+COPY ./makeelf /usr/src/makeelf
+
+# Make mkelf.py executable
+RUN chmod +x /usr/src/makeelf/mkelf.py
+
 # Set the working directory
 WORKDIR /usr/src/kernel
 
@@ -56,5 +62,11 @@ RUN make clean && \
 RUN mkdir -p /output && \
     cp /usr/src/kernel/arch/arm/boot/zImage /output/zImage
 
+# Run mkelf.py to create the ELF file
+RUN python2 /usr/src/makeelf/mkelf.py -o /output/kernel.elf \
+    /usr/src/kernel/arch/arm/boot/zImage@0x00208000 \
+    /usr/src/makeelf/krlparts/ramdisk.cpio.gz@0x01400000,ramdisk \
+    /usr/src/makeelf/krlparts/bootcmd@cmdline
+    
 # Default command
 CMD ["bash"]
