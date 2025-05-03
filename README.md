@@ -26,7 +26,7 @@ Ensure Docker is installed, then proceed with the next step.
 
 ### **2️⃣ Clone & Configure the Kernel**  
 ```bash
-git clone https://github.com/your-username/xperia-e-kernel.git  
+git clone https://github.com/JackGates1311/xperia-c1505-ics-kernel
 cd xperia-e-kernel  
 ```
 
