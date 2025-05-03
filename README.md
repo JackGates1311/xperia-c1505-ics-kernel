@@ -46,7 +46,7 @@ You need only to run ./BUILDIMAGE.sh from root of the project
 ```bash
 ./BUILDIMAGE.sh
 ```
-> **Note:** Docker automatically configures the toolchain and environment. zImage will be saved in output directory using that method
+> **Note:** Docker automatically configures the toolchain and environment. zImage will be saved in output directory using this method.
 
 ---
 
