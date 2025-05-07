@@ -1,0 +1,11 @@
+#!/sbin/busybox sh
+
+export BOOTREC_CACHE_NODE="/dev/block/mmcblk0p12 b 179 12"
+export BOOTREC_CACHE="/dev/block/mmcblk0p12"
+export BOOTREC_EVENT_NODE="/dev/input/event1 c 13 65"
+export BOOTREC_EVENT="/dev/input/event1"
+export BOOTREC_CONTROL_LED="/sys/class/leds/lm3533-light-sns/rgb_brightness"
+export BOOTREC_LED_OFF="0"
+export BOOTREC_LED_GREEN="255000"
+export BOOTREC_LED_BLUE="255"
+export BOOTREC_LED_ORANGE="050050050"
